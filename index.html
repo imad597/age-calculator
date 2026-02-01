@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Age Calculator - Precise Life Insights</title>
+  <meta name="description" content="Discover your precise age as of any date, next birthday countdown, Zodiac sign, birthstone, personal character, and fun future predictions.">
+  <meta property="og:title" content="Professional Age Calculator - Precise Life Insights">
+  <meta property="og:description" content="Discover your precise age as of any date, next birthday countdown, Zodiac sign, birthstone, personal character, and fun future predictions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/age-calculator">
+  <meta property="og:image" content="https://yourwebsite.com/og-image.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Banner Ad -->
+  <div id="top-banner-ad" class="ad-container">Top Banner Ad Placeholder</div>
+
+  <main class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Next-Gen Age Calculator</h1>
+      <p>Discover your life journey with precision, fun facts, and countdowns!</p>
+    </header>
+
+    <!-- Input Card -->
+    <section class="card input-card">
+      <label for="dob">Select Your Birthdate:</label>
+      <input type="date" id="dob" max="">
+      
+      <label for="target-date">Calculate Age As Of (optional):</label>
+      <input type="date" id="target-date" max="">
+      <small>Leave blank to calculate age as of today.</small>
+      
+      <button id="calculate-btn">Calculate Age</button>
+    </section>
+
+    <!-- Age Stats Card -->
+    <section class="card stats-card" id="stats-card" style="display:none;">
+      <h2>Your Life Stats</h2>
+      <div class="stats-grid">
+        <div class="stat"><span id="years"></span><p>Years</p></div>
+        <div class="stat"><span id="months"></span><p>Months</p></div>
+        <div class="stat"><span id="days"></span><p>Days</p></div>
+        <div class="stat"><span id="hours"></span><p>Hours</p></div>
+        <div class="stat"><span id="minutes"></span><p>Minutes</p></div>
+        <div class="stat"><span id="seconds"></span><p>Seconds</p></div>
+      </div>
+    </section>
+
+    <!-- Next Birthday Countdown -->
+    <section class="card countdown-card" id="countdown-card" style="display:none;">
+      <h2>Next Birthday Countdown</h2>
+      <p id="next-birthday">-- Days -- Hours -- Minutes -- Seconds</p>
+    </section>
+
+    <!-- Fun Facts / Extras -->
+    <section class="card fun-facts-card" id="fun-facts-card" style="display:none;">
+      <h2>Fun Facts About You</h2>
+      <div class="extras-grid">
+        <div class="extra">
+          <p>Zodiac:</p>
+          <span id="zodiac-icon"></span>
+          <span id="zodiac-name"></span>
+        </div>
+        <div class="extra">
+          <p>Birthstone:</p>
+          <span id="birthstone-icon"></span>
+          <span id="birthstone"></span>
+        </div>
+        <div class="extra"><p>Personal Character:</p><span id="personal-character"></span></div>
+        <div class="extra"><p>Future Prediction:</p><span id="future-prediction"></span></div>
+      </div>
+    </section>
+
+    <!-- Sidebar Ad -->
+    <div id="sidebar-ad" class="ad-container">Sidebar Ad Placeholder</div>
+
+    <!-- Bottom Result Ad -->
+    <div id="result-bottom-ad" class="ad-container">Result Bottom Ad Placeholder</div>
+  </main>
+
+    <!-- Bottom Result Ad -->
+  <div id="result-bottom-ad" class="ad-container"></div>
+
+ <footer class="footer">
+  © 2026 Next-Gen Age Calculator |
+  <a href="pages/about.html">About</a> |
+  <a href="pages/privacy.html">Privacy Policy</a> |
+  <a href="pages/contact.html">Contact</a>
+</footer>
+
+</body>
+</html>
+
+  <!-- Link to JS -->
+  <script src="script.js"></script>
+</body>
+</html>

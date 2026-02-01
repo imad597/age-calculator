@@ -1,0 +1,218 @@
+/* ================= VARIABLES ================= */
+:root {
+  --bg-dark: #0f172a;
+  --card-bg: rgba(30,41,59,0.85);
+  --card-border: #334155;
+  --accent-gradient: linear-gradient(90deg, #00f0ff, #a600ff);
+  --text-light: #f8fafc;
+  --text-muted: #94a3b8;
+  --spacing: 1rem;
+  --radius: 16px;
+  --transition: 0.3s ease-in-out;
+  --scrollbar-bg: #1e293b;
+  --scrollbar-thumb: #475569;
+}
+
+/* ================= BASE STYLES ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100%;
+}
+a { text-decoration: none; color: inherit; }
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+/* ================= CUSTOM SCROLLBAR ================= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 8px;
+}
+
+/* ================= HEADER ================= */
+.header {
+  text-align: center;
+}
+.header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header p {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* ================= GLASS CARD ================= */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.7);
+}
+
+/* ================= INPUT CARD ================= */
+.input-card label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.input-card input[type="date"] {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-bottom: var(--spacing);
+  transition: var(--transition);
+}
+.input-card input[type="date"]:focus {
+  outline: none;
+  background: rgba(255,255,255,0.15);
+}
+#calculate-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  background: var(--accent-gradient);
+  color: #fff;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+#calculate-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+#calculate-btn:active {
+  transform: scale(0.95);
+}
+
+/* ================= STATS GRID ================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing);
+}
+.stat {
+  text-align: center;
+}
+.stat span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.stat p {
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ================= COUNTDOWN ================= */
+.countdown-card p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00f0ff;
+}
+
+/* ================= FUN FACTS ================= */
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing);
+  text-align: center;
+}
+.extra p {
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+.extra span {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* ================= AD CONTAINERS ================= */
+.ad-container {
+  background: rgba(255,255,255,0.05);
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  text-align: center;
+  padding: var(--spacing);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .stats-grid, .extras-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+/* Optional small text under inputs */
+.input-card small {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing);
+}
+/* Ensure future prediction looks same as other extras */
+#future-prediction {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ffd700; /* golden accent for predictions */
+}
+/* ================= Dynamic SVG Alignment ================= */
+.extras-grid .extra {
+  display: flex;
+  align-items: center;       /* Vertically center text and icon */
+  gap: 8px;                  /* Space between icon and text */
+  flex-wrap: wrap;           /* Handles smaller screens */
+}
+
+.extras-grid .extra svg {
+  display: block;
+  width: 30px;               /* Consistent width for all icons */
+  height: 30px;              /* Consistent height */
+  vertical-align: middle;
+}
+
+#zodiac-icon svg {
+  width: 40px;               /* Slightly larger for Zodiac */
+  height: 40px;
+}
